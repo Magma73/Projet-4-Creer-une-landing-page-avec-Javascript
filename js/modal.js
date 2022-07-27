@@ -129,18 +129,19 @@ function checkRadioInput (radioInput) {
   }
 
 
-// Const verification Conditions générales
+// Function verification Checkbox - Conditions générales
 
-const checkBoxInput = () => {
-  const isCheckBoxValid = checkbox1.value;
+function checkBoxInput (checkbox1) {
 
-  if (this.checked) {
+  if (checkbox1.checked) {
     console.log("C'est checké");
+    return true;
   } else {
     console.log("C'est pas checké");
+    return false;
   }
-  return isCheckBoxValid;
 };
+
 
 // Const validation form
 
