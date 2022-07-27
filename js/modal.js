@@ -8,10 +8,13 @@ const firstName = document.getElementById("first");
 const lastName = document.getElementById("last");
 const email = document.getElementById("email");
 const birthdate = document.getElementById("birthdate");
-const number = document.getElementById("quantity");
+const quantity = document.getElementById("quantity");
 const radioInput = document.querySelectorAll("input[type=radio]");
 const checkbox1 = document.getElementById("checkbox1");
 // const checkbox2 = document.getElementById("checkbox2");
+
+
+const eventLocation = document.querySelectorAll(".checkbox-input[name='location']");
 
 
 /****** EVENTS ******/
@@ -93,9 +96,9 @@ function checkBirthdateInput (birthdate) {
 
   // Function verification Number
 
-  function checkNumberInput (number) {
+  function checkQuantityInput (quantity) {
 
-  if (/^0*?[0-9]\d*$/.test(number.value)) {
+  if (/^0*?[0-9]\d*$/.test(quantity.value)) {
     console.log("c'est valide");
     return true;
   } else {
@@ -104,124 +107,27 @@ function checkBirthdateInput (birthdate) {
   }
 }
 
-// Bouton radio
+  // Function verification Radio
 
-// for (i = 0; i < radioInput.length; i++) {
-//     radioInput[i].addEventListener("change", function (e) {
-//         var value = e.target;
-//         if (value.checked) {
-//             console.log("Bouton coché !");
-//         } else {
-//             console.log("Vous n'avez pas coché de bouton");
-//         }
-//     });
-// }
+function checkRadioInput (radioInput) {
 
-// let choix;
+    let checkRadioValid = 0;
 
-// for (let radios of radioInput)
-// {
-//     radioInput.length.addEventListener('click', function(e) {
-//   if (radios.checked){
-//       choix = radios.value;
-//       console.log("Bouton coché !");
-//   }
-//   else{
-//     console.log("Vous n'avez pas coché de bouton");
-//   }
-//   return choix;
-// });
-// }
+    radioInput.forEach(location => {
+        if (location.checked) {
+          checkRadioValid = 1;
+        }
+    })
 
-// function radioValidate() {
-//   let choix;
-
-//   for (let radios of radioInput)
-//   {
-//     if (radios.checked){
-//         choix = radios.value;
-//         console.log("Bouton coché !");
-//     }
-//     else{
-//       console.log("Vous n'avez pas coché de bouton");
-//     }
-//     return choix;
-//   }
-// }
-
-// radio.onclick = (e) => {
-//   let choix;
-
-//   for (let radios of radioInput)
-//   {
-//     if (radios.checked){
-//         choix = radios.value;
-//         console.log("Bouton coché !");
-//     }
-//     else{
-//       console.log("Vous n'avez pas coché de bouton");
-//     }
-//     return choix;
-//   }
-
-// }
-
-// for (const radios of radioInput) {
-//   radios.onclick = (e) => {
-//     console.log("Bouton coché !");
-//   }
-// }
-
-function checkRadioInput(radioInput) {
-  // let radio = radioInput;
-
-  // radio.onclick = (e) => {
-  //   let choix;
-
-  //   for (let radios of radioInput)
-  //   {
-  //     if (radios.checked){
-  //         choix = radios.value;
-  //         console.log("Bouton coché !");
-  //     }
-  //     else{
-  //       console.log("Vous n'avez pas coché de bouton");
-  //     }
-  //     return choix;
-  //   }
-
-  // }
-  let isCheckRadioValid = 0;
-
-  // for (i = 0; i < radioInput.length; i++) {
-  //   radioInput[i].addEventListener("change", function (e) {
-  //     var value = e.target;
-  //     if (value.checked) {
-  //       console.log("Bouton coché !");
-  //       console.log(value);
-  //     } else {
-  //       console.log("Vous n'avez pas coché de bouton");
-  //     }
-  //   });
-  // }
-
-  // return value;
-
-  radioInput.foreach((radios) => {
-    if (radios.checked) {
-      isCheckRadioValid = 1;
-    }
-  });
-
-  if (isCheckRadioValid === 0) {
-    console.log("Vous n'avez pas coché de bouton");
-    return false;
-  } else {
-    console.log("Bouton coché !");
-    console.log(radios.value);
-    return true;
+    if (checkRadioValid === 0) {
+        console.log("Vous n'avez pas coché de bouton");
+        return false;
+    } else {
+        console.log("Bouton coché !");
+        return true;
+    };
   }
-}
+
 
 // Const verification Conditions générales
 
