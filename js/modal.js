@@ -78,18 +78,18 @@ function checkEmailInput (email) {
   }
 }
 
-// Const verification Birthdate
+  // Function verification Birthdate
 
-const checkBirthdateInput = () => {
-  const isBirthdateValid = birthdate.value;
-
-  if (/^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/.test(isBirthdateValid)) {
+function checkBirthdateInput (birthdate) {
+  let today = new Date();
+  if ((/^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/.test(birthdate.value)) && birthdate.value < today.toISOString()) {
     console.log("c'est valide");
+    return true;
   } else {
     console.log("c'est pas bon");
+    return false;
   }
-  return isBirthdateValid;
-};
+}
 
 // Const verification Number
 
