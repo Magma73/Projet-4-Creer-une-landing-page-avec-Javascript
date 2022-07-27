@@ -1,4 +1,4 @@
-// DOM Elements
+/****** DOM ELEMENTS ******/
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
@@ -14,18 +14,17 @@ const checkbox1 = document.getElementById("checkbox1");
 // const checkbox2 = document.getElementById("checkbox2");
 
 
-
-// EVENTS
-
-// launch modal event
+/****** EVENTS ******/
+// Launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
-// close modal event
+// Close modal event
 modalCloseBtn.addEventListener("click", closeModal);
 
-// FUNCTIONS
 
-// edit nav (media querie : mobile)
+
+/****** FUNCTIONS ******/
+// FUNCTION VALIDATION FORM Edit nav (media querie : mobile)
 function editNav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -35,22 +34,19 @@ function editNav() {
   }
 }
 
-// launch modal form
+// FUNCTION LAUNCH MODAL FORM
 function launchModal() {
   modalbg.style.display = "block";
 }
 
-// close modal form
+// FUNCTION CLOSE MODAL FORM
 function closeModal() {
   modalbg.style.display = "none";
 }
 
-/****FUNCTION VALIDATION FORM****/
-
-// Function verification Firstname
-
-function checkFirstNameInput (firstName) {
-
+// FUNCTION VALIDATION FORM
+  // Function verification Firstname
+function checkFirstNameInput(firstName) {
   if (firstName.value.length >= 2 && /^[a-zA-Z\s\-À-ÖØ-öø-ÿ]+$/.test(firstName.value)) {
     console.log("c'est valide");
     return true;
@@ -60,10 +56,8 @@ function checkFirstNameInput (firstName) {
   }
 }
 
-// Function verification Lastname
-
-function checkLastNameInput (lastName) {
-
+  // Function verification Lastname
+function checkLastNameInput(lastName) {
   if (lastName.value.length >= 2 && /^[a-zA-Z\s\-À-ÖØ-öø-ÿ]+$/.test(lastName.value)) {
     console.log("c'est valide");
     return true;
@@ -71,21 +65,18 @@ function checkLastNameInput (lastName) {
     console.log("c'est pas bon");
     return false;
   }
-
 }
 
-// Function verification Email
-
-const checkEmailInput = () => {
-  const isEmailValid = email.value;
-
-  if (/^((?!\.)[\w_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/.test(isEmailValid)) {
+  // Function verification Email
+function checkEmailInput (email) {
+  if (/^((?!\.)[\w_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/.test(email.value)) {
     console.log("c'est valide");
+    return true;
   } else {
     console.log("c'est pas bon");
+    return false;
   }
-  return isEmailValid;
-};
+}
 
 // Const verification Birthdate
 
@@ -181,7 +172,7 @@ const checkNumberInput = () => {
 //   }
 // }
 
-function checkRadioInput (radioInput) {
+function checkRadioInput(radioInput) {
   // let radio = radioInput;
 
   // radio.onclick = (e) => {
@@ -216,26 +207,21 @@ function checkRadioInput (radioInput) {
 
   // return value;
 
-  radioInput.foreach (radios=>
-  {
-
-    if (radios.checked){
-        isCheckRadioValid = 1;
+  radioInput.foreach((radios) => {
+    if (radios.checked) {
+      isCheckRadioValid = 1;
     }
-  })
+  });
 
-  if(isCheckRadioValid === 0){
+  if (isCheckRadioValid === 0) {
     console.log("Vous n'avez pas coché de bouton");
     return false;
-  }
-  else{
+  } else {
     console.log("Bouton coché !");
     console.log(radios.value);
     return true;
-  };
+  }
 }
-
-
 
 // Const verification Conditions générales
 
@@ -260,14 +246,12 @@ function validate(e) {
   e.preventDefault();
 
   const formData = new FormData(form);
-    const values = [...formData.entries()];
-
+  const values = [...formData.entries()];
 
   if (isFormValid()) {
     window.alert("Merci ! Votre réservation a été reçue.");
     console.log(values);
-  }
-  else{
+  } else {
     window.alert("Vous devez remplir le formulaire.");
     return false;
   }
@@ -287,5 +271,3 @@ function validate(e) {
 //   }
 
 // formData.get('username');
-
-
