@@ -91,18 +91,18 @@ function checkBirthdateInput (birthdate) {
   }
 }
 
-// Const verification Number
+  // Function verification Number
 
-const checkNumberInput = () => {
-  const isNumberValid = number.value;
+  function checkNumberInput (number) {
 
-  if (/^0*?[0-9]\d*$/.test(isNumberValid)) {
+  if (/^0*?[0-9]\d*$/.test(number.value)) {
     console.log("c'est valide");
+    return true;
   } else {
     console.log("c'est pas bon");
+    return false;
   }
-  return isNumberValid;
-};
+}
 
 // Bouton radio
 
