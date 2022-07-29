@@ -1,6 +1,7 @@
 /****** DOM ELEMENTS ******/
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
+const form = document.getElementById("myForm");
 const formData = document.querySelectorAll(".formData");
 const modalCloseBtn = document.querySelector(".close");
 
@@ -162,12 +163,12 @@ addEventListener('submit', (e) => {
     checkRadioInput(radioInput) &&
     checkBoxInput(checkbox1) === true
   ){
-    // document.getElementsByName("resserve").reset();
+    form.reset();
     window.alert("Merci ! Votre réservation a été reçue.");
     // window.location.reload();
     closeModal();
   }
   else{
-    window.alert("Vous devez remplir le formulaire.");
+    // window.alert("Vous devez remplir le formulaire.");
   }
 });
