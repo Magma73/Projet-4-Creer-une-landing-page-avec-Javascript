@@ -40,34 +40,33 @@
                     <span class="close"></span>
                     <div class="modal-body">
                         <form name="reserve" action="index.html" method="get">
-                            <div class="formData" >
-                              <!-- data-error="Veuillez entrer 2 caractères ou plus pour le champ du prénom." -->
+                            <div class="formData" data-error-visible="false" data-error="Veuillez entrer 2 caractères ou plus pour le champ du prénom.">
                                 <label for="first">Prénom</label>
                                 <input class="text-control" type="text" id="first" name="first" />
                             </div>
 
-                            <div class="formData" data-error-visible="true" data-error="Veuillez entrer 2 caractères ou plus pour le champ du nom.">
+                            <div class="formData" data-error-visible="false" data-error="Veuillez entrer 2 caractères ou plus pour le champ du nom.">
                                 <label for="last">Nom</label>
                                 <input class="text-control" type="text" id="last" name="last" />
                                 <!-- <p class="error">Veuillez entrer 2 caractères ou plus pour le champ du nom.</p> -->
                             </div>
 
-                            <div class="formData" data-error="Vous devez saisir une adresse mail.">
+                            <div class="formData" data-error-visible="false" data-error="Vous devez saisir une adresse mail.">
                                 <label for="email">E-mail</label>
                                 <input class="text-control" type="email" id="email" name="email" />
                             </div>
 
-                            <div class="formData" data-error="Vous devez entrer votre date de naissance.">
+                            <div class="formData" data-error-visible="false" data-error="Vous devez entrer votre date de naissance.">
                                 <label for="birthdate">Date de naissance</label>
                                 <input class="text-control" type="date" id="birthdate" name="birthdate" />
                             </div>
 
-                            <div class="formData" data-error="Vous devez entrer un nombre.">
+                            <div class="formData" data-error-visible="false" data-error="Vous devez entrer un nombre.">
                                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label>
                                 <input type="number" class="text-control" id="quantity" name="quantity" />
                             </div>
 
-                            <div class="formData" data-error="Vous devez choisir une option.">
+                            <div class="formData" data-error-visible="false" data-error="Vous devez choisir une option.">
                                 <p class="text-label">À quel tournoi souhaitez-vous participer cette année ?</p>
 
                                 <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" />
@@ -89,8 +88,8 @@
                                 <label class="checkbox-label" for="location6"> <span class="checkbox-icon"></span>Portland </label>
                             </div>
 
-                            <div class="formData" data-error="Vous devez vérifier que vous acceptez les termes et conditions.">
-                                <input class="checkbox-input" type="checkbox" id="checkbox1" checked="checked" />
+                            <div class="formData" data-error-visible="false" data-error="Vous devez vérifier que vous acceptez les termes et conditions.">
+                                <input class="checkbox-input" type="checkbox" id="checkbox1"  />
                                 <label class="checkbox2-label" for="checkbox1">
                                     <span class="checkbox-icon"></span>
                                     J'ai lu et accepté les conditions d'utilisation.
