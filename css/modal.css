@@ -17,7 +17,7 @@ body {
   background-image: url("background.png");
   font-family: var(--font-default);
   font-size: 18px;
-  max-width: 1300px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -27,12 +27,13 @@ p {
 }
 
 img {
-  padding-right: 1rem;
+  /* padding-right: 1rem; */
+  width: 276px;
 }
 
 .topnav {
   overflow: hidden;
-  margin: 3.5%;
+  margin: 3.7% 3% 3.5% 7%;
 }
 .header-logo {
     float: left;
@@ -45,25 +46,31 @@ img {
   display: block;
   color: #000000;
   text-align: center;
-  padding: 12px 12px;
-  margin: 5px;
+  padding: 12px 11px 7px 11px;
+  margin: 1.5px;
   text-decoration: none;
-  font-size: 20px;
-  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  font-family: 'DM SANS';
+  font-weight: 500;
 }
-
-.topnav a:hover {
+.topnav a:hover > span{
+  border-bottom: 1px solid white;
+  padding: 0 3px;
+}
+.topnav a:hover{
   background-color: #ff0000;
   color: #ffffff;
-  border-radius: 15px;
+  border-radius: 9px;
 }
-
 .topnav a.active {
   background-color: #ff0000;
   color: #ffffff;
-  border-radius: 15px;
+  border-radius: 9px;
 }
-
+.topnav a.active > span{
+  border-bottom: 1px solid white;
+  padding: 0 3px;
+}
 .topnav .icon {
   display: none;
 }
@@ -99,7 +106,7 @@ img {
     display: block;
     margin-top: -15px;
   }
-} 
+}
 
 main {
   font-size: 130%;
@@ -111,7 +118,8 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
+  max-width: 1330px;
+  margin: 0 auto;
 
 }
 
@@ -226,7 +234,7 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-/* 
+/*
 input[data-error]::after {
     content: attr(data-error);
     font-size: 0.4em;
