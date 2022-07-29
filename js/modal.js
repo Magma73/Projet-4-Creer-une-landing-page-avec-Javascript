@@ -13,9 +13,7 @@ const radioInput = document.querySelectorAll("input[type=radio]");
 const checkbox1 = document.getElementById("checkbox1");
 // const checkbox2 = document.getElementById("checkbox2");
 
-
 const eventLocation = document.querySelectorAll(".checkbox-input[name='location']");
-
 
 /****** EVENTS ******/
 // Launch modal event
@@ -23,8 +21,6 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // Close modal event
 modalCloseBtn.addEventListener("click", closeModal);
-
-
 
 /****** FUNCTIONS ******/
 // FUNCTION VALIDATION FORM Edit nav (media querie : mobile)
@@ -48,7 +44,7 @@ function closeModal() {
 }
 
 // FUNCTION VALIDATION FORM
-  // Function verification Firstname
+// Function verification Firstname
 function checkFirstNameInput(firstName) {
   if (firstName.value.length >= 2 && /^[a-zA-Z\s\-À-ÖØ-öø-ÿ]+$/.test(firstName.value)) {
     console.log("c'est valide");
@@ -59,7 +55,7 @@ function checkFirstNameInput(firstName) {
   }
 }
 
-  // Function verification Lastname
+// Function verification Lastname
 function checkLastNameInput(lastName) {
   if (lastName.value.length >= 2 && /^[a-zA-Z\s\-À-ÖØ-öø-ÿ]+$/.test(lastName.value)) {
     console.log("c'est valide");
@@ -70,8 +66,8 @@ function checkLastNameInput(lastName) {
   }
 }
 
-  // Function verification Email
-function checkEmailInput (email) {
+// Function verification Email
+function checkEmailInput(email) {
   if (/^((?!\.)[\w_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/.test(email.value)) {
     console.log("c'est valide");
     return true;
@@ -81,11 +77,11 @@ function checkEmailInput (email) {
   }
 }
 
-  // Function verification Birthdate
+// Function verification Birthdate
 
-function checkBirthdateInput (birthdate) {
+function checkBirthdateInput(birthdate) {
   let today = new Date();
-  if ((/^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/.test(birthdate.value)) && birthdate.value < today.toISOString()) {
+  if (/^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/.test(birthdate.value) && birthdate.value < today.toISOString()) {
     console.log("c'est valide");
     return true;
   } else {
@@ -94,10 +90,9 @@ function checkBirthdateInput (birthdate) {
   }
 }
 
-  // Function verification Number
+// Function verification Number
 
-  function checkQuantityInput (quantity) {
-
+function checkQuantityInput(quantity) {
   if (/^0*?[0-9]\d*$/.test(quantity.value)) {
     console.log("c'est valide");
     return true;
@@ -107,32 +102,29 @@ function checkBirthdateInput (birthdate) {
   }
 }
 
-  // Function verification Radio
+// Function verification Radio
 
-function checkRadioInput (radioInput) {
+function checkRadioInput(radioInput) {
+  let checkRadioValid = 0;
 
-    let checkRadioValid = 0;
+  radioInput.forEach((location) => {
+    if (location.checked) {
+      checkRadioValid = 1;
+    }
+  });
 
-    radioInput.forEach(location => {
-        if (location.checked) {
-          checkRadioValid = 1;
-        }
-    })
-
-    if (checkRadioValid === 0) {
-        console.log("Vous n'avez pas coché de bouton");
-        return false;
-    } else {
-        console.log("Bouton coché !");
-        return true;
-    };
+  if (checkRadioValid === 0) {
+    console.log("Vous n'avez pas coché de bouton");
+    return false;
+  } else {
+    console.log("Bouton coché !");
+    return true;
   }
-
+}
 
 // Function verification Checkbox - Conditions générales
 
-function checkBoxInput (checkbox1) {
-
+function checkBoxInput(checkbox1) {
   if (checkbox1.checked) {
     console.log("C'est checké");
     return true;
@@ -140,41 +132,55 @@ function checkBoxInput (checkbox1) {
     console.log("C'est pas checké");
     return false;
   }
-};
-
+}
 
 // Const validation form
 
-const isFormValid = () => checkFirstNameInput() && checkLastNameInput() && checkEmailInput() && checkBirthdateInput() && checkNumberInput() && checkRadioInput() && checkBoxInput();
+// const isFormValid = () => checkFirstNameInput() && checkLastNameInput() && checkEmailInput() && checkBirthdateInput() && checkNumberInput() && checkRadioInput() && checkBoxInput();
+
+// const isFormValid = () =>
+//   checkFirstNameInput(firstName) &&
+//   checkLastNameInput(lastName) &&
+//   checkEmailInput(email) &&
+//   checkBirthdateInput(birthdate) &&
+//   checkQuantityInput(quantity) &&
+//   checkRadioInput(radioInput) &&
+//   checkBoxInput(checkbox1);
+
+
+
+
+// if(
+//   checkFirstNameInput(firstName) &&
+//   checkLastNameInput(lastName) &&
+//   checkEmailInput(email) &&
+//   checkBirthdateInput(birthdate) &&
+//   checkQuantityInput(quantity) &&
+//   checkRadioInput(radioInput) &&
+//   checkBoxInput(checkbox1) === true
+// ){
+//   console.log("true");
+
+// }
+
 
 // Validate form
 
-function validate(e) {
+addEventListener('submit', (e) => {
   e.preventDefault();
-
-  const formData = new FormData(form);
-  const values = [...formData.entries()];
-
-  if (isFormValid()) {
+  if(
+    checkFirstNameInput(firstName) &&
+    checkLastNameInput(lastName) &&
+    checkEmailInput(email) &&
+    checkBirthdateInput(birthdate) &&
+    checkQuantityInput(quantity) &&
+    checkRadioInput(radioInput) &&
+    checkBoxInput(checkbox1) === true
+  ){
     window.alert("Merci ! Votre réservation a été reçue.");
-    console.log(values);
-  } else {
-    window.alert("Vous devez remplir le formulaire.");
-    return false;
+
   }
-}
-
-//if (firstNameValidate == true) && (firstNameValidate == true)  {
-//else return false
-
-// const formDataTest = new FormData(formElem);
-// console.log(formDataTest);
-// console.log(formDataTest.get('first'));
-//   if(){
-//     prenom = true;
-//   }
-//   else{
-
-//   }
-
-// formData.get('username');
+  else{
+    window.alert("Vous devez remplir le formulaire.");
+  }
+});
