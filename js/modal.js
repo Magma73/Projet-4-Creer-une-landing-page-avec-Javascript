@@ -4,6 +4,7 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const form = document.getElementById("myForm");
 const formData = document.querySelectorAll(".formData");
 const modalCloseBtn = document.querySelector(".close");
+const icon = document.getElementsByClassName("icon");
 
 const firstName = document.getElementById("first");
 const lastName = document.getElementById("last");
@@ -88,21 +89,37 @@ function checkEmailInput(email) {
 
 function checkBirthdateInput(birthdate) {
   let today = new Date();
-  if (/^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/.test(birthdate.value) && birthdate.value < today.toISOString()) {
-    console.log("c'est valide");
+  let yearMinimum = today.getFullYear() - 16; // âge minimum 16 ans
+  let yearMaximum = today.getFullYear() - 80; // âge maximum 80 ans
+  let birthdatePlayer = new Date(birthdate.value); // convertit la valeur de l'input birthdate en date
+  let yearPlayer = birthdatePlayer.getFullYear(); // récupère l'année de naissance du player
+  if (/^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/.test(birthdate.value) && yearPlayer < yearMinimum && yearPlayer > yearMaximum) {
     formData[3].setAttribute("data-error-visible", "false");
     return true;
-  } else {
-    console.log("c'est pas bon");
+  }
+  else if (/^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/.test(birthdate.value) && yearPlayer > yearMinimum) {
     formData[3].setAttribute("data-error-visible", "true");
+    formData[3].setAttribute("data-error", "Vous devez avoir plus de 16 ans.");
+    return false;
+  }
+  else if (/^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/.test(birthdate.value) && yearPlayer < yearMaximum) {
+    formData[3].setAttribute("data-error-visible", "true");
+    formData[3].setAttribute("data-error", "Vous êtes un peu trop âgé pour participer à notre événement.");
+    return false;
+  }
+  else {
+    formData[3].setAttribute("data-error-visible", "true");
+    formData[3].setAttribute("data-error", "Vous devez entrer votre date de naissance.");
     return false;
   }
 }
 
+
+
 // Function verification Number
 
 function checkQuantityInput(quantity) {
-  if (/^0*?[0-9]\d*$/.test(quantity.value)) {
+  if (/^0*?[0-9]\d*$/.test(quantity.value) && quantity.value >=0 && quantity.value <=20) {
     console.log("c'est valide");
     formData[4].setAttribute("data-error-visible", "false");
     return true;
