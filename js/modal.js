@@ -86,46 +86,45 @@ function checkEmailInput(email) {
 }
 
 // Function verification Birthdate
-
 function checkBirthdateInput(birthdate) {
   let today = new Date();
   let yearMinimum = today.getFullYear() - 16; // âge minimum 16 ans
   let yearMaximum = today.getFullYear() - 80; // âge maximum 80 ans
   let birthdatePlayer = new Date(birthdate.value); // convertit la valeur de l'input birthdate en date
-  let yearPlayer = birthdatePlayer.getFullYear(); // récupère l'année de naissance du player
+  let yearPlayer = birthdatePlayer.getFullYear(); // récupère l'année de naissance de l'usager
   if (/^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/.test(birthdate.value) && yearPlayer < yearMinimum && yearPlayer > yearMaximum) {
     formData[3].setAttribute("data-error-visible", "false");
     return true;
-  }
-  else if (/^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/.test(birthdate.value) && yearPlayer > yearMinimum) {
+  } else if (/^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/.test(birthdate.value) && yearPlayer > yearMinimum) {
     formData[3].setAttribute("data-error-visible", "true");
     formData[3].setAttribute("data-error", "Vous devez avoir plus de 16 ans.");
     return false;
-  }
-  else if (/^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/.test(birthdate.value) && yearPlayer < yearMaximum) {
+  } else if (/^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/.test(birthdate.value) && yearPlayer < yearMaximum) {
     formData[3].setAttribute("data-error-visible", "true");
     formData[3].setAttribute("data-error", "Vous êtes un peu trop âgé pour participer à notre événement.");
     return false;
-  }
-  else {
+  } else {
     formData[3].setAttribute("data-error-visible", "true");
     formData[3].setAttribute("data-error", "Vous devez entrer votre date de naissance.");
     return false;
   }
 }
 
-
-
 // Function verification Number
 
 function checkQuantityInput(quantity) {
-  if (/^0*?[0-9]\d*$/.test(quantity.value) && quantity.value >=0 && quantity.value <=20) {
-    console.log("c'est valide");
+  if (/^0*?[0-9]\d*$/.test(quantity.value) && quantity.value >= 0 && quantity.value <= 20) {
     formData[4].setAttribute("data-error-visible", "false");
     return true;
-  } else {
-    console.log("c'est pas bon");
+  }
+  if (/^0*?[0-9]\d*$/.test(quantity.value) && quantity.value > 20) {
     formData[4].setAttribute("data-error-visible", "true");
+    formData[4].setAttribute("data-error", "Vous devez entrer un nombre compris entre 0 et 20.");
+    return false;
+  }
+  else {
+    formData[4].setAttribute("data-error-visible", "true");
+    formData[4].setAttribute("data-error", "Vous devez entrer un nombre.");
     return false;
   }
 }
@@ -166,12 +165,11 @@ function checkBoxInput(checkbox1) {
   }
 }
 
-
 // Validate form
 
-addEventListener('submit', (e) => {
+addEventListener("submit", (e) => {
   e.preventDefault();
-  if(
+  if (
     checkFirstNameInput(firstName) &&
     checkLastNameInput(lastName) &&
     checkEmailInput(email) &&
@@ -179,13 +177,12 @@ addEventListener('submit', (e) => {
     checkQuantityInput(quantity) &&
     checkRadioInput(radioInput) &&
     checkBoxInput(checkbox1) === true
-  ){
+  ) {
     form.reset();
     window.alert("Merci ! Votre réservation a été reçue.");
     // window.location.reload();
     closeModal();
-  }
-  else{
-    // window.alert("Vous devez remplir le formulaire.");
+  } else {
+    // window.alert("Veuillez remplir le formulaire");
   }
 });

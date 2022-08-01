@@ -39,7 +39,7 @@
                 <div class="content">
                     <span class="close"></span>
                     <div class="modal-body">
-                        <form name="reserve" action="index.html" method="get">
+                        <form name="reserve" action="index.html" method="get" id="myForm">
                             <div class="formData" data-error-visible="false" data-error="Veuillez entrer 2 caractères ou plus pour le champ du prénom.">
                                 <label for="first">Prénom</label>
                                 <input class="text-control" type="text" id="first" name="first" />
@@ -56,12 +56,12 @@
                                 <input class="text-control" type="email" id="email" name="email" />
                             </div>
 
-                            <div class="formData" data-error-visible="false" data-error="Vous devez entrer votre date de naissance.">
+                            <div class="formData" data-error-visible="" data-error="">
                                 <label for="birthdate">Date de naissance</label>
                                 <input class="text-control" type="date" id="birthdate" name="birthdate" />
                             </div>
 
-                            <div class="formData" data-error-visible="false" data-error="Vous devez entrer un nombre.">
+                            <div class="formData" data-error-visible="" data-error="">
                                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label>
                                 <input type="number" class="text-control" id="quantity" name="quantity" />
                             </div>
@@ -89,7 +89,7 @@
                             </div>
 
                             <div class="formData" data-error-visible="false" data-error="Vous devez vérifier que vous acceptez les termes et conditions.">
-                                <input class="checkbox-input" type="checkbox" id="checkbox1"  />
+                                <input class="checkbox-input" type="checkbox" id="checkbox1"/>
                                 <label class="checkbox2-label" for="checkbox1">
                                     <span class="checkbox-icon"></span>
                                     J'ai lu et accepté les conditions d'utilisation.
