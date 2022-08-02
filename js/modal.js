@@ -49,12 +49,11 @@ function closeModal() {
 // Function verification Firstname
 function checkFirstNameInput(firstName) {
   if (firstName.value.length >= 2 && /^[a-zA-Z\s\-À-ÖØ-öø-ÿ]+$/.test(firstName.value)) {
-    console.log("c'est valide");
     formData[0].setAttribute("data-error-visible", "false");
     return true;
   } else {
-    console.log("c'est pas bon");
     formData[0].setAttribute("data-error-visible", "true");
+    formData[0].setAttribute("data-error", "Veuillez entrer 2 caractères ou plus pour le champ du prénom.");
     return false;
   }
 }
@@ -62,12 +61,11 @@ function checkFirstNameInput(firstName) {
 // Function verification Lastname
 function checkLastNameInput(lastName) {
   if (lastName.value.length >= 2 && /^[a-zA-Z\s\-À-ÖØ-öø-ÿ]+$/.test(lastName.value)) {
-    console.log("c'est valide");
     formData[1].setAttribute("data-error-visible", "false");
     return true;
   } else {
-    console.log("c'est pas bon");
     formData[1].setAttribute("data-error-visible", "true");
+    formData[1].setAttribute("data-error", "Veuillez entrer 2 caractères ou plus pour le champ du nom.");
     return false;
   }
 }
@@ -75,12 +73,11 @@ function checkLastNameInput(lastName) {
 // Function verification Email
 function checkEmailInput(email) {
   if (/^((?!\.)[\w_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/.test(email.value)) {
-    console.log("c'est valide");
     formData[2].setAttribute("data-error-visible", "false");
     return true;
   } else {
-    console.log("c'est pas bon");
     formData[2].setAttribute("data-error-visible", "true");
+    formData[2].setAttribute("data-error", "Vous devez saisir une adresse mail.");
     return false;
   }
 }
@@ -141,11 +138,11 @@ function checkRadioInput(radioInput) {
   });
 
   if (checkRadioValid === 0) {
-    console.log("Vous n'avez pas coché de bouton");
     formData[5].setAttribute("data-error-visible", "true");
+    formData[5].setAttribute("data-error", "Vous devez choisir une option.");
+
     return false;
   } else {
-    console.log("Bouton coché !");
     formData[5].setAttribute("data-error-visible", "false");
     return true;
   }
@@ -155,12 +152,11 @@ function checkRadioInput(radioInput) {
 
 function checkBoxInput(checkbox1) {
   if (checkbox1.checked) {
-    console.log("C'est checké");
     formData[6].setAttribute("data-error-visible", "false");
     return true;
   } else {
-    console.log("C'est pas checké");
     formData[6].setAttribute("data-error-visible", "true");
+    formData[6].setAttribute("data-error", "Vous devez vérifier que vous acceptez les termes et conditions.");
     return false;
   }
 }
@@ -178,9 +174,15 @@ addEventListener("submit", (e) => {
     checkRadioInput(radioInput) &&
     checkBoxInput(checkbox1) === true
   ) {
+    console.log(checkFirstNameInput(firstName) &&
+    checkLastNameInput(lastName) &&
+    checkEmailInput(email) &&
+    checkBirthdateInput(birthdate) &&
+    checkQuantityInput(quantity) &&
+    checkRadioInput(radioInput) &&
+    checkBoxInput(checkbox1));
     form.reset();
     window.alert("Merci ! Votre réservation a été reçue.");
-    // window.location.reload();
     closeModal();
   } else {
     // window.alert("Veuillez remplir le formulaire");
