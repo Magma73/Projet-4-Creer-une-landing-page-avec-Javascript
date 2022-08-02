@@ -1,4 +1,4 @@
-/****** DOM ELEMENTS ******/
+/********* DOM ELEMENTS *********/
 const modalbg = document.querySelector(".bground");
 const modalbgValidate = document.querySelector(".bground__validate");
 const modalBtn = document.querySelectorAll(".modal-btn");
@@ -15,23 +15,21 @@ const quantity = document.getElementById("quantity");
 const radioInput = document.querySelectorAll("input[type=radio]");
 const checkbox1 = document.getElementById("checkbox1");
 
-/****** REGEX ELEMENTS ******/
-const regexName = /^[a-zA-Z\s\-À-ÖØ-öø-ÿ]+$/ ;
-const regexEmail = /^((?!\.)[\w_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/ ;
-const regexbirthdate = /^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/ ;
-const regexQuantity = /^0*?[0-9]\d*$/ ;
+/********* REGEX ELEMENTS *********/
+const regexName = /^[a-zA-Z\s\-À-ÖØ-öø-ÿ]+$/;
+const regexEmail = /^((?!\.)[\w_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/;
+const regexbirthdate = /^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/;
+const regexQuantity = /^0*?[0-9]\d*$/;
 
-
-/****** EVENTS ******/
+/********* EVENTS *********/
 // Launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // Close modal event
 modalCloseBtn.forEach((btn) => btn.addEventListener("click", closeModal));
 
-/****** FUNCTIONS ******/
-// FUNCTION EDIT NAV (media querie : mobile)
-
+/******** FUNCTIONS ********/
+// FUNCTION EDIT NAV (media querie)
 icon.addEventListener("click", function () {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -41,22 +39,24 @@ icon.addEventListener("click", function () {
   }
 });
 
-// FUNCTION LAUNCH MODAL FORM
+// FUNCTION LAUNCH MODAL FORM AND MESSAGE OF VALIDATION
 function launchModal() {
+  // Form
   modalbg.style.display = "block";
 }
 
 function launchModalValidate() {
+  // Message validation
   modalbgValidate.style.display = "block";
 }
 
-// FUNCTION CLOSE MODAL FORM
+// FUNCTION CLOSE MODAL FORM AND MESSAGE OF VALIDATION
 function closeModal() {
   modalbg.style.display = "none";
   modalbgValidate.style.display = "none";
 }
 
-// FUNCTION VALIDATION FORM
+// FUNCTIONS VALIDATION FORM
 // Function verification Firstname
 function checkFirstNameInput(firstName) {
   if (firstName.value.length >= 2 && regexName.test(firstName.value)) {
@@ -96,10 +96,10 @@ function checkEmailInput(email) {
 // Function verification Birthdate
 function checkBirthdateInput(birthdate) {
   let today = new Date();
-  let yearMinimum = today.getFullYear() - 16; // âge minimum 16 ans
-  let yearMaximum = today.getFullYear() - 80; // âge maximum 80 ans
-  let birthdatePlayer = new Date(birthdate.value); // convertit la valeur de l'input birthdate en date
-  let yearPlayer = birthdatePlayer.getFullYear(); // récupère l'année de naissance de l'usager
+  let yearMinimum = today.getFullYear() - 16; // age minimum 16 years
+  let yearMaximum = today.getFullYear() - 80; // age maximum 80 years
+  let birthdatePlayer = new Date(birthdate.value); // converts the value of the input birthdate to date
+  let yearPlayer = birthdatePlayer.getFullYear(); // recovers the user's year of birth
   if (regexbirthdate.test(birthdate.value) && yearPlayer < yearMinimum && yearPlayer > yearMaximum) {
     formData[3].setAttribute("data-error-visible", "false");
     return true;
@@ -119,7 +119,6 @@ function checkBirthdateInput(birthdate) {
 }
 
 // Function verification Number
-
 function checkQuantityInput(quantity) {
   if (regexQuantity.test(quantity.value) && quantity.value >= 0 && quantity.value <= 20) {
     formData[4].setAttribute("data-error-visible", "false");
@@ -137,20 +136,17 @@ function checkQuantityInput(quantity) {
 }
 
 // Function verification Radio
-
 function checkRadioInput(radioInput) {
   let checkRadioValid = 0;
-
-  radioInput.forEach((location) => { // cherche si un bouton radio est checked
+  radioInput.forEach((location) => {
+    // look if a button is checked
     if (location.checked) {
       checkRadioValid = 1;
     }
   });
-
   if (checkRadioValid === 0) {
     formData[5].setAttribute("data-error-visible", "true");
     formData[5].setAttribute("data-error", "Vous devez choisir une option.");
-
     return false;
   } else {
     formData[5].setAttribute("data-error-visible", "false");
@@ -159,7 +155,6 @@ function checkRadioInput(radioInput) {
 }
 
 // Function verification Checkbox - Conditions générales
-
 function checkBoxInput(checkbox1) {
   if (checkbox1.checked) {
     formData[6].setAttribute("data-error-visible", "false");
@@ -171,10 +166,10 @@ function checkBoxInput(checkbox1) {
   }
 }
 
-// Validate form
-
+// Function Validate form
 addEventListener("submit", (e) => {
-  e.preventDefault();
+  //on submit, verify if the functions of verification are true
+  e.preventDefault(); // if it's true, the form is reset and closed and the message of validation appears
   if (
     checkFirstNameInput(firstName) &&
     checkLastNameInput(lastName) &&
