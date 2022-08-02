@@ -5,7 +5,7 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const form = document.getElementById("myForm");
 const formData = document.querySelectorAll(".formData");
 const modalCloseBtn = document.querySelectorAll(".close");
-const icon = document.getElementsByClassName("icon");
+const icon = document.querySelector(".icon");
 
 const firstName = document.getElementById("first");
 const lastName = document.getElementById("last");
@@ -24,14 +24,15 @@ modalCloseBtn.forEach((btn) => btn.addEventListener("click", closeModal));
 
 /****** FUNCTIONS ******/
 // FUNCTION VALIDATION FORM Edit nav (media querie : mobile)
-function editNav() {
+
+icon.addEventListener("click", function() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
   } else {
     x.className = "topnav";
   }
-}
+});
 
 // FUNCTION LAUNCH MODAL FORM
 function launchModal() {
@@ -47,11 +48,6 @@ function closeModal() {
   modalbg.style.display = "none";
   modalbgValidate.style.display = "none";
 }
-
-// function closeModalValidate() {
-//   modalbgValidate.style.display = "none";
-// }
-
 
 // FUNCTION VALIDATION FORM
 // Function verification Firstname
