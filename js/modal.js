@@ -15,6 +15,13 @@ const quantity = document.getElementById("quantity");
 const radioInput = document.querySelectorAll("input[type=radio]");
 const checkbox1 = document.getElementById("checkbox1");
 
+/****** REGEX ELEMENTS ******/
+const regexName = /^[a-zA-Z\s\-À-ÖØ-öø-ÿ]+$/ ;
+const regexEmail = /^((?!\.)[\w_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/ ;
+const regexbirthdate = /^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/ ;
+const regexQuantity = /^0*?[0-9]\d*$/ ;
+
+
 /****** EVENTS ******/
 // Launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -23,9 +30,9 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 modalCloseBtn.forEach((btn) => btn.addEventListener("click", closeModal));
 
 /****** FUNCTIONS ******/
-// FUNCTION VALIDATION FORM Edit nav (media querie : mobile)
+// FUNCTION EDIT NAV (media querie : mobile)
 
-icon.addEventListener("click", function() {
+icon.addEventListener("click", function () {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
@@ -52,7 +59,7 @@ function closeModal() {
 // FUNCTION VALIDATION FORM
 // Function verification Firstname
 function checkFirstNameInput(firstName) {
-  if (firstName.value.length >= 2 && /^[a-zA-Z\s\-À-ÖØ-öø-ÿ]+$/.test(firstName.value)) {
+  if (firstName.value.length >= 2 && regexName.test(firstName.value)) {
     formData[0].setAttribute("data-error-visible", "false");
     return true;
   } else {
@@ -64,7 +71,7 @@ function checkFirstNameInput(firstName) {
 
 // Function verification Lastname
 function checkLastNameInput(lastName) {
-  if (lastName.value.length >= 2 && /^[a-zA-Z\s\-À-ÖØ-öø-ÿ]+$/.test(lastName.value)) {
+  if (lastName.value.length >= 2 && regexName.test(lastName.value)) {
     formData[1].setAttribute("data-error-visible", "false");
     return true;
   } else {
@@ -76,7 +83,7 @@ function checkLastNameInput(lastName) {
 
 // Function verification Email
 function checkEmailInput(email) {
-  if (/^((?!\.)[\w_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/.test(email.value)) {
+  if (regexEmail.test(email.value)) {
     formData[2].setAttribute("data-error-visible", "false");
     return true;
   } else {
@@ -93,14 +100,14 @@ function checkBirthdateInput(birthdate) {
   let yearMaximum = today.getFullYear() - 80; // âge maximum 80 ans
   let birthdatePlayer = new Date(birthdate.value); // convertit la valeur de l'input birthdate en date
   let yearPlayer = birthdatePlayer.getFullYear(); // récupère l'année de naissance de l'usager
-  if (/^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/.test(birthdate.value) && yearPlayer < yearMinimum && yearPlayer > yearMaximum) {
+  if (regexbirthdate.test(birthdate.value) && yearPlayer < yearMinimum && yearPlayer > yearMaximum) {
     formData[3].setAttribute("data-error-visible", "false");
     return true;
-  } else if (/^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/.test(birthdate.value) && yearPlayer > yearMinimum) {
+  } else if (regexbirthdate.test(birthdate.value) && yearPlayer > yearMinimum) {
     formData[3].setAttribute("data-error-visible", "true");
     formData[3].setAttribute("data-error", "Vous devez avoir plus de 16 ans.");
     return false;
-  } else if (/^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/.test(birthdate.value) && yearPlayer < yearMaximum) {
+  } else if (regexbirthdate.test(birthdate.value) && yearPlayer < yearMaximum) {
     formData[3].setAttribute("data-error-visible", "true");
     formData[3].setAttribute("data-error", "Vous êtes un peu trop âgé pour participer à notre événement!");
     return false;
@@ -114,11 +121,11 @@ function checkBirthdateInput(birthdate) {
 // Function verification Number
 
 function checkQuantityInput(quantity) {
-  if (/^0*?[0-9]\d*$/.test(quantity.value) && quantity.value >= 0 && quantity.value <= 20) {
+  if (regexQuantity.test(quantity.value) && quantity.value >= 0 && quantity.value <= 20) {
     formData[4].setAttribute("data-error-visible", "false");
     return true;
   }
-  if (/^0*?[0-9]\d*$/.test(quantity.value) && quantity.value > 20) {
+  if (regexQuantity.test(quantity.value) && quantity.value > 20) {
     formData[4].setAttribute("data-error-visible", "true");
     formData[4].setAttribute("data-error", "Vous devez entrer un nombre compris entre 0 et 20.");
     return false;
@@ -134,7 +141,7 @@ function checkQuantityInput(quantity) {
 function checkRadioInput(radioInput) {
   let checkRadioValid = 0;
 
-  radioInput.forEach((location) => {
+  radioInput.forEach((location) => { // cherche si un bouton radio est checked
     if (location.checked) {
       checkRadioValid = 1;
     }
