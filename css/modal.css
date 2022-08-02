@@ -29,6 +29,7 @@ p {
 img {
   /* padding-right: 1rem; */
   width: 276px;
+  height:auto;
 }
 
 .topnav {
@@ -189,6 +190,10 @@ main {
   position: relative;
   color: #fff;
   padding-top: 10px;
+}
+
+.content__validate{
+  margin: 15% auto;
 }
 
 .modal-body {
