@@ -6,6 +6,7 @@ const form = document.getElementById("myForm");
 const formData = document.querySelectorAll(".formData");
 const modalCloseBtn = document.querySelectorAll(".close");
 const icon = document.querySelector(".icon");
+const btnClose = document.querySelector(".btn-close");
 
 const firstName = document.getElementById("first");
 const lastName = document.getElementById("last");
@@ -25,8 +26,11 @@ const regexQuantity = /^0*?[0-9]\d*$/;
 // Launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
-// Close modal event
+// Close modal event : cross
 modalCloseBtn.forEach((btn) => btn.addEventListener("click", closeModal));
+
+// Close modal event : btn
+btnClose.addEventListener("click", closeModal);
 
 /******** FUNCTIONS ********/
 // FUNCTION EDIT NAV (media querie)
@@ -40,13 +44,11 @@ icon.addEventListener("click", function () {
 });
 
 // FUNCTION LAUNCH MODAL FORM AND MESSAGE OF VALIDATION
-function launchModal() {
-  // Form
+function launchModal() { // Form
   modalbg.style.display = "block";
 }
 
-function launchModalValidate() {
-  // Message validation
+function launchModalValidate() { // Message validation
   modalbgValidate.style.display = "block";
 }
 
@@ -138,8 +140,7 @@ function checkQuantityInput(quantity) {
 // Function verification Radio
 function checkRadioInput(radioInput) {
   let checkRadioValid = 0;
-  radioInput.forEach((location) => {
-    // look if a button is checked
+  radioInput.forEach((location) => { // look if a button is checked
     if (location.checked) {
       checkRadioValid = 1;
     }
@@ -167,8 +168,7 @@ function checkBoxInput(checkbox1) {
 }
 
 // Function Validate form
-addEventListener("submit", (e) => {
-  //on submit, verify if the functions of verification are true
+addEventListener("submit", (e) => { //on submit, verify if the functions of verification are true
   e.preventDefault(); // if it's true, the form is reset and closed and the message of validation appears
   if (
     checkFirstNameInput(firstName) &&
