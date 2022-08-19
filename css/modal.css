@@ -557,8 +557,9 @@ footer {
     display: block;
     box-shadow: unset;
     max-height: unset;
-    min-height: 93vh;
+    /* min-height: 93vh; */
     margin-top: -31px;
+    min-height: unset;
   }
   .hero-content {
     background: #fff;
@@ -601,9 +602,14 @@ footer {
     padding: 6px 31px;
     font-family: 'DM Sans';
   }
+  footer{
+    margin:0;
+  }
   .copyrights {
-    margin-top: 50px;
+    margin:0;
+    /* margin-top: -241px; */
     text-align: center;
+    font-size: 0.6rem;
   }
 }
 
