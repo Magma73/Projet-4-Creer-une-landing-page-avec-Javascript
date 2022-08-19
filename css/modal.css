@@ -28,12 +28,12 @@ p {
 
 img {
   padding-right: 1rem;
-  width: 277px;
+  width: 291px;
   height:auto;
 }
 
 .topnav {
-  overflow: hidden;
+  /* overflow: hidden; */
   margin: 3.7% 3% 5% 7%;
 }
 .header-logo {
@@ -79,6 +79,9 @@ img {
 }
 
 @media screen and (max-width: 768px) {
+  img{
+    width: 281px;
+  }
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
@@ -118,7 +121,8 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -5px;
+    margin-top: -7px;
+    margin-right: 5px;
   }
 }
 
@@ -194,7 +198,7 @@ main {
   margin: 5% auto;
   width: 100%;
   max-width: 500px;
-  height: 850.61px;
+  /* height: 850.61px; */
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
   background: #232323;
@@ -205,9 +209,9 @@ main {
   padding-top: 10px;
 }
 
-/* .content__validate{
-  max-height:756px;
-} */
+.content__validate{
+    height: 850.61px;
+}
 
 
 .modal-body {
@@ -454,7 +458,10 @@ input[data-error]::after {
   font-size: 16px;
 }
 .hero-section {
-  min-height: 93vh;
+  max-width: 1239px;
+  margin: auto;
+  max-height: 657px;
+  /* min-height: 93vh; */
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -463,13 +470,14 @@ input[data-error]::after {
   margin-bottom: 10px;
 }
 .hero-content {
-  padding: 51px 67px;
+  /* padding: 51px 67px; */
   grid-column: span 4;
   background: #232323;
   color: #fff;
   position: relative;
   text-align: left;
   min-width: 424px;
+  padding: 51px 57px;
 }
 .hero-content::after {
   content: "";
@@ -531,6 +539,8 @@ footer {
   .hero-section {
     display: block;
     box-shadow: unset;
+    max-height: unset;
+    min-height: 93vh;
   }
   .hero-content {
     background: #fff;
