@@ -19,7 +19,7 @@ const checkbox1 = document.getElementById("checkbox1");
 /********* REGEX ELEMENTS *********/
 const regexName = /^[a-zA-Z\s\-À-ÖØ-öø-ÿ]+$/;
 const regexEmail = /^((?!\.)[\w_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/;
-const regexbirthdate = /^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/;
+const regexBirthdate = /^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/;
 const regexQuantity = /^0*?[0-9]\d*$/;
 
 /********* EVENTS *********/
@@ -97,19 +97,19 @@ function checkEmailInput(email) {
 
 // Function verification Birthdate
 function checkBirthdateInput(birthdate) {
-  let today = new Date();
-  let yearMinimum = today.getFullYear() - 16; // age minimum 16 years
-  let yearMaximum = today.getFullYear() - 80; // age maximum 80 years
-  let birthdatePlayer = new Date(birthdate.value); // converts the value of the input birthdate to date
-  let yearPlayer = birthdatePlayer.getFullYear(); // recovers the user's year of birth
-  if (regexbirthdate.test(birthdate.value) && yearPlayer < yearMinimum && yearPlayer > yearMaximum) {
+  const today = new Date();
+  const yearMinimum = today.getFullYear() - 16; // age minimum 16 years
+  const yearMaximum = today.getFullYear() - 80; // age maximum 80 years
+  const birthdatePlayer = new Date(birthdate.value); // converts the value of the input birthdate to date
+  const yearPlayer = birthdatePlayer.getFullYear(); // recovers the user's year of birth
+  if (regexBirthdate.test(birthdate.value) && yearPlayer < yearMinimum && yearPlayer > yearMaximum) {
     formData[3].setAttribute("data-error-visible", "false");
     return true;
-  } else if (regexbirthdate.test(birthdate.value) && yearPlayer > yearMinimum) {
+  } else if (regexBirthdate.test(birthdate.value) && yearPlayer > yearMinimum) {
     formData[3].setAttribute("data-error-visible", "true");
     formData[3].setAttribute("data-error", "Vous devez avoir plus de 16 ans.");
     return false;
-  } else if (regexbirthdate.test(birthdate.value) && yearPlayer < yearMaximum) {
+  } else if (regexBirthdate.test(birthdate.value) && yearPlayer < yearMaximum) {
     formData[3].setAttribute("data-error-visible", "true");
     formData[3].setAttribute("data-error", "Vous êtes un peu trop âgé pour participer à notre événement!");
     return false;
@@ -170,6 +170,13 @@ function checkBoxInput(checkbox1) {
 // Function Validate form
 addEventListener("submit", (e) => { //on submit, verify if the functions of verification are true
   e.preventDefault(); // if it's true, the form is reset and closed and the message of validation appears
+  checkFirstNameInput(firstName) ;
+  checkLastNameInput(lastName) ;
+  checkEmailInput(email) ;
+  checkBirthdateInput(birthdate);
+  checkQuantityInput(quantity);
+  checkRadioInput(radioInput);
+  checkBoxInput(checkbox1);
   if (
     checkFirstNameInput(firstName) &&
     checkLastNameInput(lastName) &&
@@ -182,7 +189,5 @@ addEventListener("submit", (e) => { //on submit, verify if the functions of veri
     form.reset();
     closeModal();
     launchModalValidate();
-  } else {
-    // window.alert("Veuillez remplir le formulaire");
   }
 });
