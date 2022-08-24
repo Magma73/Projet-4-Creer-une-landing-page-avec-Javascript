@@ -7,6 +7,7 @@ const formData = document.querySelectorAll(".formData");
 const modalCloseBtn = document.querySelectorAll(".close");
 const icon = document.querySelector(".icon");
 const btnClose = document.querySelector(".btn-close");
+const linkActive = document.querySelectorAll(".link__active");
 
 const firstName = document.getElementById("first");
 const lastName = document.getElementById("last");
@@ -23,6 +24,9 @@ const regexBirthdate = /^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/;
 const regexQuantity = /^0*?[0-9]\d*$/;
 
 /********* EVENTS *********/
+// Change class active
+linkActive.forEach((a) => a.addEventListener("click", changeClassActive));
+
 // Launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
@@ -42,6 +46,11 @@ icon.addEventListener("click", function () {
     x.className = "topnav";
   }
 });
+// FUNCTION CHANGE CLASS ACTIVE ON NAV LINKS
+function changeClassActive(){
+  linkActive.forEach(a => a.classList.remove('active'));
+  this.classList.add('active');
+}
 
 // FUNCTION LAUNCH MODAL FORM AND MESSAGE OF VALIDATION
 function launchModal() { // Form
