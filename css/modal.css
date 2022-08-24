@@ -221,6 +221,8 @@ main {
 }
 
 .modal-body__validate{
+  padding: 15px 8%;
+  margin: 15px auto;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -230,7 +232,7 @@ main {
   font-weight: 400;
   font-size: 36px;
   text-align: center;
-  padding-top:361px;
+  padding-top: 361px;
 }
 
 
@@ -618,9 +620,15 @@ footer {
   .content {
     margin: 0% auto;
   }
+  .content__validate{
+    height:unset;
+  }
   .modal-body {
     padding: 15px 6%;
     margin: 10px auto;
+  }
+  .modal-body__validate{
+    padding-top: 222px;
   }
   label, .text-label {
     font-size: 13.25px;
