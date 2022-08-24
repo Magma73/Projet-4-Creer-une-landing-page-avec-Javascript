@@ -383,7 +383,8 @@ input[data-error]::after {
   margin: 0 auto;
   border-radius: 7px;
   font-size: 1rem;
-  padding: 12px 82px;
+  /* padding: 12px 82px; */
+  padding: 8px 56px 14px 56px;
   color: #fff;
   cursor: pointer;
   border: 0;
