@@ -239,7 +239,7 @@ main {
 
 label {
   font-family: var(--font-default);
-  font-size: 17px;
+  font-size: 14px;
   font-weight: normal;
   display: inline-block;
   margin-bottom: 11px;
@@ -254,7 +254,7 @@ input {
   padding: 8px;
   width: 100%;
   border-radius: 8px;
-  font-size: 20px;
+  font-size: 18px;
   height: 48px;
 }
 .formData[data-error]::after {
@@ -295,7 +295,7 @@ input[data-error]::after {
   width: 20px;
   height: 20px;
   /* border: 2px solid #279e7a; */
-  border: 2px solid #C4C4C4;
+  border: 1px solid #C4C4C4;
   border-radius: 50%;
   text-indent: 29px;
   white-space: nowrap;
@@ -335,8 +335,8 @@ input[data-error]::after {
   border: 0;
   background: #c4c4c4;
 }
-.checkbox-input:checked {
-  border: 2px solid #279e7a;
+.checkbox-input:checked + .checkbox-label .checkbox-icon{
+  border: 1px solid #279e7a;
 }
 .checkbox2-label .checkbox-icon::after {
   width: 7px;
@@ -463,7 +463,7 @@ input[data-error]::after {
 /* custom select end */
 .text-label {
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
   padding:0;
 }
 .hero-section {
@@ -635,9 +635,6 @@ footer {
   }
   label {
     margin-bottom: 8px;
-  }
-  .text-control {
-    font-size: 18px;
   }
   .checkbox-label,
   .checkbox2-label {
