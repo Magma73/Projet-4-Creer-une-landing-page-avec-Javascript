@@ -46,6 +46,7 @@ icon.addEventListener("click", function () {
     x.className = "topnav";
   }
 });
+
 // FUNCTION CHANGE CLASS ACTIVE ON NAV LINKS
 function changeClassActive(){
   linkActive.forEach(a => a.classList.remove('active'));
@@ -107,7 +108,7 @@ function checkEmailInput(email) {
 // Function verification Birthdate
 function checkBirthdateInput(birthdate) {
   const today = new Date();
-  const yearMinimum = today.getFullYear() - 16; // age minimum 16 years
+  const yearMinimum = today.getFullYear() - 18; // age minimum 18 years
   const yearMaximum = today.getFullYear() - 80; // age maximum 80 years
   const birthdatePlayer = new Date(birthdate.value); // converts the value of the input birthdate to date
   const yearPlayer = birthdatePlayer.getFullYear(); // recovers the user's year of birth
@@ -116,7 +117,7 @@ function checkBirthdateInput(birthdate) {
     return true;
   } else if (regexBirthdate.test(birthdate.value) && yearPlayer > yearMinimum) {
     formData[3].setAttribute("data-error-visible", "true");
-    formData[3].setAttribute("data-error", "Vous devez avoir plus de 16 ans.");
+    formData[3].setAttribute("data-error", "Vous devez avoir plus de 18 ans.");
     return false;
   } else if (regexBirthdate.test(birthdate.value) && yearPlayer < yearMaximum) {
     formData[3].setAttribute("data-error-visible", "true");
