@@ -1,6 +1,6 @@
 :root {
   --font-default: "DM Sans", Arial, Helvetica, sans-serif;
-  --font-secondary: "Roboto";
+  --font-secondary: "Roboto", Arial, Helvetica, sans-serif;
   --font-slab: var(--font-default);
   --modal-duration: 0.8s;
 }
@@ -256,6 +256,7 @@ input {
   border-radius: 8px;
   font-size: 18px;
   height: 48px;
+  font-family: 'DM Sans';
 }
 .formData[data-error]::after {
   content: attr(data-error);
@@ -388,6 +389,7 @@ input[data-error]::after {
   color: #fff;
   cursor: pointer;
   border: 0;
+  font-family: var(--font-default);
 }
 
 .btn-close{
