@@ -71,24 +71,41 @@ function closeModal() {
 // FUNCTIONS VALIDATION FORM
 // Function verification Firstname
 function checkFirstNameInput(firstName) {
-  if (firstName.value.length >= 2 && regexName.test(firstName.value)) {
+  if (firstName.value.length >= 2 && firstName.value.length <= 100 && regexName.test(firstName.value)) {
     formData[0].setAttribute("data-error-visible", "false");
     return true;
-  } else {
+  } else if (firstName.value.length < 2  && regexName.test(firstName.value)) {
     formData[0].setAttribute("data-error-visible", "true");
     formData[0].setAttribute("data-error", "Veuillez entrer 2 caractères ou plus pour le champ du prénom.");
+    return false;
+  } else if (firstName.value.length > 100  && regexName.test(firstName.value)) {
+    formData[0].setAttribute("data-error-visible", "true");
+    formData[0].setAttribute("data-error", "Ce champ ne peut pas contenir plus de 100 caractères.");
+    return false;
+  } else {
+    formData[0].setAttribute("data-error-visible", "true");
+    formData[0].setAttribute("data-error", "Veuillez entrer votre prénom.");
     return false;
   }
 }
 
 // Function verification Lastname
 function checkLastNameInput(lastName) {
-  if (lastName.value.length >= 2 && regexName.test(lastName.value)) {
+  if (lastName.value.length >= 2 &&  lastName.value.length <= 100 && regexName.test(lastName.value)) {
     formData[1].setAttribute("data-error-visible", "false");
     return true;
-  } else {
+  } else if (lastName.value.length < 2  && regexName.test(lastName.value)) {
     formData[1].setAttribute("data-error-visible", "true");
     formData[1].setAttribute("data-error", "Veuillez entrer 2 caractères ou plus pour le champ du nom.");
+    return false;
+  } else if (lastName.value.length > 100  && regexName.test(lastName.value)) {
+    formData[1].setAttribute("data-error-visible", "true");
+    formData[1].setAttribute("data-error", "Ce champ ne peut pas contenir plus de 100 caractères.");
+    return false;
+
+  } else {
+    formData[1].setAttribute("data-error-visible", "true");
+    formData[1].setAttribute("data-error", "Veuillez entrer votre nom.");
     return false;
   }
 }
