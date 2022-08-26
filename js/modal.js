@@ -48,9 +48,9 @@ icon.addEventListener("click", function () {
 });
 
 // FUNCTION CHANGE CLASS ACTIVE ON NAV LINKS
-function changeClassActive(){
-  linkActive.forEach(a => a.classList.remove('active'));
-  this.classList.add('active');
+function changeClassActive() {
+  linkActive.forEach((a) => a.classList.remove("active"));
+  this.classList.add("active");
 }
 
 // FUNCTION LAUNCH MODAL FORM AND MESSAGE OF VALIDATION
@@ -74,11 +74,11 @@ function checkFirstNameInput(firstName) {
   if (firstName.value.length >= 2 && firstName.value.length <= 100 && regexName.test(firstName.value)) {
     formData[0].setAttribute("data-error-visible", "false");
     return true;
-  } else if (firstName.value.length < 2  && regexName.test(firstName.value)) {
+  } else if (firstName.value.length < 2 && regexName.test(firstName.value)) {
     formData[0].setAttribute("data-error-visible", "true");
     formData[0].setAttribute("data-error", "Veuillez entrer 2 caractères ou plus pour le champ du prénom.");
     return false;
-  } else if (firstName.value.length > 100  && regexName.test(firstName.value)) {
+  } else if (firstName.value.length > 100 && regexName.test(firstName.value)) {
     formData[0].setAttribute("data-error-visible", "true");
     formData[0].setAttribute("data-error", "Ce champ ne peut pas contenir plus de 100 caractères.");
     return false;
@@ -91,18 +91,17 @@ function checkFirstNameInput(firstName) {
 
 // Function verification Lastname
 function checkLastNameInput(lastName) {
-  if (lastName.value.length >= 2 &&  lastName.value.length <= 100 && regexName.test(lastName.value)) {
+  if (lastName.value.length >= 2 && lastName.value.length <= 100 && regexName.test(lastName.value)) {
     formData[1].setAttribute("data-error-visible", "false");
     return true;
-  } else if (lastName.value.length < 2  && regexName.test(lastName.value)) {
+  } else if (lastName.value.length < 2 && regexName.test(lastName.value)) {
     formData[1].setAttribute("data-error-visible", "true");
     formData[1].setAttribute("data-error", "Veuillez entrer 2 caractères ou plus pour le champ du nom.");
     return false;
-  } else if (lastName.value.length > 100  && regexName.test(lastName.value)) {
+  } else if (lastName.value.length > 100 && regexName.test(lastName.value)) {
     formData[1].setAttribute("data-error-visible", "true");
     formData[1].setAttribute("data-error", "Ce champ ne peut pas contenir plus de 100 caractères.");
     return false;
-
   } else {
     formData[1].setAttribute("data-error-visible", "true");
     formData[1].setAttribute("data-error", "Veuillez entrer votre nom.");
@@ -197,9 +196,9 @@ function checkBoxInput(checkbox1) {
 // Function Validate form
 addEventListener("submit", (e) => { //on submit, verify if the functions of verification are true
   e.preventDefault(); // if it's true, the form is reset and closed and the message of validation appears
-  checkFirstNameInput(firstName) ;
-  checkLastNameInput(lastName) ;
-  checkEmailInput(email) ;
+  checkFirstNameInput(firstName);
+  checkLastNameInput(lastName);
+  checkEmailInput(email);
   checkBirthdateInput(birthdate);
   checkQuantityInput(quantity);
   checkRadioInput(radioInput);

@@ -372,7 +372,7 @@ footer {
   padding-right: 2vw;
   margin: 0 20px;
 }
-
+/* Media queries */
 @media screen and (max-width: 800px) {
   .hero-section {
     display: block;
@@ -510,7 +510,7 @@ footer {
     margin-right: 5px;
   }
 }
-
+/* Keyframes */
 @keyframes modalopen {
   from {
     opacity: 0;
