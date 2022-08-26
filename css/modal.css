@@ -354,7 +354,6 @@ input {
   display: block;
   padding: 0;
   object-fit: cover;
-  object-position: 100% -15px;
 }
 .copyrights {
   color: #fe142f;
