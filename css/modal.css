@@ -624,7 +624,7 @@ footer {
     margin: 0% auto;
   }
   .content__validate{
-    height:unset;
+    max-height: 657px;
   }
   .modal-body {
     padding: 15px 6%;
