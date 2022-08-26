@@ -174,7 +174,7 @@ function checkRadioInput(radioInput) {
   });
   if (checkRadioValid === 0) {
     formData[5].setAttribute("data-error-visible", "true");
-    formData[5].setAttribute("data-error", "Vous devez choisir une option.");
+    formData[5].setAttribute("data-error", "Vous devez choisir une ville.");
     return false;
   } else {
     formData[5].setAttribute("data-error-visible", "false");
