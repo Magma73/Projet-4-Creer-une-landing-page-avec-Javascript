@@ -106,7 +106,7 @@ main {
   overflow: hidden;
   position: relative;
   color: #fff;
-  padding-top: 10px;
+  padding-top: 5px;
 }
 .content__validate {
   height: 850.61px;
@@ -422,6 +422,9 @@ footer {
   }
   .bground {
     top: 78px;
+    /* max-height: 657px; */
+  }
+  .bground__validate  {
     max-height: 657px;
   }
   .content {
