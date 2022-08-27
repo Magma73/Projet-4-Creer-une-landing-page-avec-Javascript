@@ -367,7 +367,22 @@ input {
 }
 
 /* Media queries */
+@media screen and (max-width: 992px) {
+  .header-logo > img:nth-child(1) {
+    width: 93px;
+    vertical-align: middle;
+   }
+   .hero-headline {
+    font-size: 4.5rem;
+  }
+  .topnav a {
+    margin: -3px;
+  }
+}
 @media screen and (max-width: 768px) {
+  .header-logo > img:nth-child(1) {
+    width: 281px;
+   }
   .hero-section {
     display: block;
     box-shadow: unset;
@@ -457,9 +472,9 @@ input {
 }
 
 @media screen and (max-width: 768px) {
-  img {
+   /* img {
     width: 281px;
-  }
+  } */
   .topnav a {
     display: none;
   }
