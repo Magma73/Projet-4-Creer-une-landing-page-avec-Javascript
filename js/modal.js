@@ -193,7 +193,7 @@ function checkBoxInput(checkbox1) {
   }
 }
 
-// Function Validate form
+// Function submit form
 addEventListener("submit", (e) => { //on submit, verify if the functions of verification are true
   e.preventDefault(); // if it's true, the form is reset and closed and the message of validation appears
   checkFirstNameInput(firstName);
