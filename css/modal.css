@@ -1,7 +1,6 @@
 :root {
   --font-default: "DM Sans", Arial, Helvetica, sans-serif;
   --font-secondary: "Roboto", Arial, Helvetica, sans-serif;
-  --font-slab: var(--font-default);
   --modal-duration: 0.8s;
 }
 * {
@@ -74,10 +73,11 @@ main {
 .modal-btn:hover {
   background: #3876ac;
 }
-.footer {
-  margin: 20px;
-  padding: 10px;
-  font-family: var(--font-slab);
+footer {
+  padding-left: 1.5vw;
+  padding-right: 2vw;
+  margin: 0 20px;
+  font-family: var(--font-secondary);
 }
 
 /* Modal form */
@@ -360,19 +360,14 @@ input {
   padding: 0;
   font-size: 1rem;
   margin: 70px 0 30px;
-  font-family: var(--font-secondary);
   font-weight: bolder;
 }
 .hero-section > .btn-signup {
   display: none;
 }
-footer {
-  padding-left: 1.5vw;
-  padding-right: 2vw;
-  margin: 0 20px;
-}
+
 /* Media queries */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   .hero-section {
     display: block;
     box-shadow: unset;
