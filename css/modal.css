@@ -472,11 +472,12 @@ input {
 }
 
 @media screen and (max-width: 768px) {
-   /* img {
+   img {
     width: 281px;
-  } */
+  }
   .topnav a {
     display: none;
+    margin: 1.5px;
   }
   .topnav a.icon {
     float: right;
