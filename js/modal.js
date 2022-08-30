@@ -148,13 +148,13 @@ function checkBirthdateInput(birthdate) {
 
 // Function verification Number
 function checkQuantityInput(quantity) {
-  if (regexQuantity.test(quantity.value) && quantity.value >= 0 && quantity.value <= 20) {
+  if (regexQuantity.test(quantity.value) && quantity.value >= 0 && quantity.value <= 99) {
     formData[4].setAttribute("data-error-visible", "false");
     return true;
   }
-  if (regexQuantity.test(quantity.value) && quantity.value > 20) {
+  if (regexQuantity.test(quantity.value) && quantity.value > 100) {
     formData[4].setAttribute("data-error-visible", "true");
-    formData[4].setAttribute("data-error", "Vous devez entrer un nombre compris entre 0 et 20.");
+    formData[4].setAttribute("data-error", "Vous devez entrer un nombre compris entre 0 et 99.");
     return false;
   } else {
     formData[4].setAttribute("data-error-visible", "true");
