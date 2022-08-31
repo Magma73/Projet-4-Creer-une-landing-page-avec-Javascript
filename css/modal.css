@@ -449,10 +449,6 @@ input {
   .modal-body__validate {
     padding-top: 222px;
   }
-  label,
-  .text-label {
-    font-size: 13.25px;
-  }
   label {
     margin-bottom: 8px;
   }
