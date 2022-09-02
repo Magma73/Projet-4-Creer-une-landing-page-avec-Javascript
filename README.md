@@ -2,7 +2,7 @@
 
 ## Contexte du projet
 GameOn est une PME spécialisée dans les conférences et les concours de jeux. 
-Après avoir reçu des commentaires négatifs de la part de certains utilisateurs, la page d'accueil et l'inscription aux concours ont été simplifiées.
+Après avoir reçu des commentaires négatifs de la part de certains utilisateurs, la page d'accueil et l'inscription aux concours ont été simplifiées.</br>
 L'objectif est de terminer la refonte de la page d'accueil et du formulaire d'inscription commencée par un collègue qui ne travaille plus chez GameOn.
 
 ## Mission du projet
@@ -20,9 +20,12 @@ La mission principale pour ce projet était :
 
 
 ## Maquettes à respecter
-La base des maquettes a été créée via [Figma](https://www.figma.com/file/B7NKBDvSI18uoMLJgpnh48/UI-Design-GameOn-FR)
+La base des maquettes a été créée via [Figma](https://www.figma.com/file/B7NKBDvSI18uoMLJgpnh48/UI-Design-GameOn-FR).
 
+### Page d'accueil - version desktop
 ![Maquette GameOn Page d'accueil](/assets/img/Maquette_HomePage_GameOn.png)
+
+### Formulaire d'inscription - version mobile
 ![Maquette GameOn Formulaire Mobile](/assets/img/Maquette_Form_Mobile_GameOn.png.png) 
 
 
@@ -62,7 +65,7 @@ La base des maquettes a été créée via [Figma](https://www.figma.com/file/B7N
 
 Accéder au repo d'origine : ![repository initial](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/)
 
-Consulter les issues à résoudre :  ![les 5 issues à résoudre](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/issues)
+Consulter les issues à résoudre :  ![liste des issues](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/issues)
 
 
 ## Tester le projet
