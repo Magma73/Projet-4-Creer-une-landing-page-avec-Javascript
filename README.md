@@ -3,7 +3,7 @@
 ## Contexte du projet
 GameOn est une PME spécialisée dans les conférences et les concours de jeux. 
 Après avoir reçu des commentaires négatifs de la part de certains utilisateurs, la page d'accueil et l'inscription aux concours ont été simplifiées.
-L'objectif est de terminer la refonte de la page d'accueil et du formulaire d'inscription commencée par un collègue qui a changé d'emploi.
+L'objectif est de terminer la refonte de la page d'accueil et du formulaire d'inscription commencée par un collègue qui ne travaille plus chez GameOn.
 
 ## Mission du projet
 La mission principale pour ce projet était :
@@ -15,25 +15,26 @@ La mission principale pour ce projet était :
 ## Technologies utilisées
 * VS Code : HTML5, CSS3 et Javascript
 * Github et github pages : versionner le code et avoir une version en ligne
-* règle : mettre en forme le code
-* Regex101.com : générer des regex
+* Prettier : mettre en forme le code
+* [Regex101.com](https://regex101.com/) : générer des regex
 
 
-## Maquettes à intégrer
+## Maquettes à respecter
+Base des maquettes : [Maquettes GameOn créées avec Figma](https://www.figma.com/file/B7NKBDvSI18uoMLJgpnh48/UI-Design-GameOn-FR)
+
 ![Maquette GameOn Page d'accueil](/assets/img/Maquette_HomePage_GameOn.png)
 ![Maquette GameOn Page d'accueil Mobile](/assets/img/Maquette_HomePage_Mobile_GameOn.png)
-![Maquette GameOn Formulaire Mobile](/assets/img/Maquette_Form_Mobile_GameOn.png.png)
-![Maquette GameOn Message de validation Mobile](/assets/img/Maquette_Message_Mobile_GameOn.png.png)
+![Maquette GameOn Formulaire Mobile](/assets/img/Maquette_Form_Mobile_GameOn.png.png) ![Maquette GameOn Message de validation Mobile](/assets/img/Maquette_Message_Mobile_GameOn.png.png)
 
 
 ## Notes et contraintes du projet
 
-**Police et icônes :**
+**Police et icône :**
 
 * Polices : 
 	* Pour l'ensemble du projet : [DM Sans ](https://fonts.google.com/specimen/DM+Sans?query=dm+sans)
 	* Pour le footer : [Roboto](https://fonts.google.com/specimen/Roboto?query=Roboto)
-* Icônes : [FontAwesome](https://fontawesome.com/)
+* Icône : [FontAwesome](https://fontawesome.com/)
 
 **Couleurs :**
 
@@ -42,6 +43,7 @@ La mission principale pour ce projet était :
 * Vert (tertiaire) : #279E7A
 * Blanc (tertiaire) : #FFFFFF
 * Gris (tertiaire) : #C4C4C4
+
 
 **Contraintes :**
 
@@ -59,9 +61,9 @@ La mission principale pour ce projet était :
 * Compatibilité : Dernières versions de Chrome et Firefox
 
 
-Voir le repo d'origine : ![Repository initial](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/)
+Voir le repo d'origine : ![repository initial](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/)
 
-Voir les issues à résoudre :  ![Les 5 issues à résoudre](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/issues)
+Voir les issues à résoudre :  ![les 5 issues à résoudre](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/issues)
 
 
 ## Tester le projet
