@@ -20,16 +20,15 @@ La mission principale pour ce projet était :
 
 
 ## Maquettes à respecter
-Base des maquettes : [Maquettes GameOn créées avec Figma](https://www.figma.com/file/B7NKBDvSI18uoMLJgpnh48/UI-Design-GameOn-FR)
+La base des maquettes a été créée via [Figma](https://www.figma.com/file/B7NKBDvSI18uoMLJgpnh48/UI-Design-GameOn-FR)
 
 ![Maquette GameOn Page d'accueil](/assets/img/Maquette_HomePage_GameOn.png)
-![Maquette GameOn Page d'accueil Mobile](/assets/img/Maquette_HomePage_Mobile_GameOn.png)
-![Maquette GameOn Formulaire Mobile](/assets/img/Maquette_Form_Mobile_GameOn.png.png) ![Maquette GameOn Message de validation Mobile](/assets/img/Maquette_Message_Mobile_GameOn.png.png)
+![Maquette GameOn Formulaire Mobile](/assets/img/Maquette_Form_Mobile_GameOn.png.png) 
 
 
 ## Notes et contraintes du projet
 
-**Police et icône :**
+**Polices et icône :**
 
 * Polices : 
 	* Pour l'ensemble du projet : [DM Sans ](https://fonts.google.com/specimen/DM+Sans?query=dm+sans)
@@ -49,7 +48,7 @@ Base des maquettes : [Maquettes GameOn créées avec Figma](https://www.figma.co
 
 * Travailler sur un repo GitHub forké
 * Utiliser des fichiers séparés pour le HTML, le CSS et le JavaScript
-* Commenter le code : décrire chaque fonction et chaque classe, ainsi que les parties du code qui nécessitent plus de détails
+* Commenter le code : décrire chaque fonction chaque classe et les parties du code qui nécessitent plus de détails
 * Tester manuellement les fonctionnalités, les entrées de formulaire et l'affichage responsive
 * Langages à utiliser : HTML5, CSS3 et Javascript (Vanilla)
 * Frameworks autorisés : non
@@ -61,9 +60,9 @@ Base des maquettes : [Maquettes GameOn créées avec Figma](https://www.figma.co
 * Compatibilité : Dernières versions de Chrome et Firefox
 
 
-Voir le repo d'origine : ![repository initial](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/)
+Accéder au repo d'origine : ![repository initial](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/)
 
-Voir les issues à résoudre :  ![les 5 issues à résoudre](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/issues)
+Consulter les issues à résoudre :  ![les 5 issues à résoudre](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/issues)
 
 
 ## Tester le projet
